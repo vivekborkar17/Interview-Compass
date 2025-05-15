@@ -21,7 +21,14 @@ const InterviewCard = ({interviewId,userId,role,type,techstack,createdAt}: Inter
             <div className='absolute top-0 right-0 w-fit px-4 py-2 rounded-bl-lg bg-light-600'>
                 <p className='badge-text'>{normalisedType}</p>
             </div>
-            <Image src={getRandomInterviewCover()} alt="interview cover" width={390} height={90} className='rounded-full object-fit size-[90px]'/>
+            <Image
+              src={getRandomInterviewCover()}
+              alt="interview cover"
+              width={390}
+              height={90}
+              className="rounded-full object-cover w-[90px] h-[90px]"
+              priority // Add priority to ensure the image is preloaded
+            />
             <h3 className='mt-5 capitalize'>
                 {role} Interview
              </h3>
