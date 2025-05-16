@@ -1,5 +1,5 @@
 'use server'
-import { db, auth } from "@/firebase/admin";
+import { db, auth } from "../../firebase/admin";
 import { cookies } from "next/headers";
 import path from "path";
 
@@ -101,8 +101,11 @@ export async function getCurrentUser(): Promise<User | null> {
       return null;
     }
 
+    const userData = userRecord.data();
     return {
-      ...userRecord.data(),
+      name: userData?.name || "",
+      email: userData?.email || "",
+      id: decodedClaims.uid,
       uid: decodedClaims.uid,
     } as User;
 
