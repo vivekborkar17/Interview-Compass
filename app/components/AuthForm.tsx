@@ -8,15 +8,11 @@ import Image from "next/image"
 import Link from "next/link"
 import { toast } from "sonner"
 import { Form } from "../components/ui/form"
-import { Input } from "../components/ui/input"
-import { Sidebar } from "lucide-react"
 import FormField from "../components/FormField"
-import { FormItem, FormLabel, FormControl, FormDescription, FormMessage } from "./ui/form"
-import { useRouter } from "next/navigation"
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
-import { getAuth } from "firebase/auth";
 import { auth } from "@/firebase/client"
 import { signIn, signUp } from "@/lib/actions/auth.action"
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth"
+import { useRouter } from "next/navigation"
 
 const AuthFormSchema = (type: FormType) => {
   return z.object({

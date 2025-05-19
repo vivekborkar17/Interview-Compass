@@ -1,7 +1,5 @@
-import { get } from 'http'
 import React from 'react'
 import { getTechLogos } from '@/lib/utils'
-import { Divide } from 'lucide-react';
 import Image from 'next/image'
 
 const DisplayTechIcons = async ({techStack}: TechIconProps) => {

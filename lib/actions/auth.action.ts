@@ -1,7 +1,6 @@
 'use server'
 import { db, auth } from "../../firebase/admin";
 import { cookies } from "next/headers";
-import path from "path";
 
 const ONE_WEEK = 60 * 60 * 24 * 7 * 1000;
 
@@ -120,3 +119,7 @@ export async function isAuthenticated() {
 
   return !!user;
 }
+
+const fetchData = async (params: Record<string, unknown>): Promise<unknown> => {
+  // function implementation
+};

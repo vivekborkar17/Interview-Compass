@@ -2,8 +2,6 @@ import { getRandomInterviewCover } from '@/lib/utils';
 import { generateText } from "ai";
 import { google } from "@ai-sdk/google";
 import { db } from '@/firebase/admin';
-import { create } from 'domain';
-import { get } from 'http';
 export async function GET(request: Request) {
     return Response.json({success:true,data:"Thank you"},{status:200});
 }
@@ -45,4 +43,4 @@ export async function POST(request: Request) {
         return Response.json({success:false,error},{status:500})
     }
 
-} 
+}
